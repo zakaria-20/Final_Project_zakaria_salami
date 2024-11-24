@@ -30,8 +30,7 @@ class ReservationController extends Controller
     {
         $reservations = Reservation::with('user')->get();
     
-        // Debug output to logs instead of halting
-        // Log::info('Reservations data:', $reservations->toArray());
+  
     
         $reservations = $reservations->map(function ($reservation) {
             return [
@@ -39,7 +38,7 @@ class ReservationController extends Controller
                 "start" => $reservation->start,
                 "end" => $reservation->end,
                 "owner" => $reservation->user ? $reservation->user->name : 'Unknown',
-                "color" => "#fcc102",
+                "color" => "#f9ac54",
                 "passed" => false,
                 "title" => ($reservation->user->name ?? 'Unknown') . "'s Reservation",
             ];

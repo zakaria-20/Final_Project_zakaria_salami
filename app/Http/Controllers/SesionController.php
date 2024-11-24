@@ -38,23 +38,9 @@ class SesionController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate the incoming request data
+       
       
-        // try {
-        //     $request->validate([
-        //         'name' => 'required|string|max:255',
-        //         'description' => 'nullable|string',
-        //         'day' => 'string',
-        //         'start'=>'required',
-        //         'end'=>'required',
-        //         'spots' => 'required|integer',
-        //         'is_premium' => 'nullable|boolean',
-        //         'available' => 'nullable|boolean',
-        //         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        //     ]);
-        // } catch (\Illuminate\Validation\ValidationException $e) {
-        //     dd($e->errors());
-        // }
+    
              $request->validate([
                 'name' => 'required|string|max:255',
                 'description' => 'nullable|string',
@@ -67,11 +53,9 @@ class SesionController extends Controller
             //   'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
            ]);
         // dd($request);
-        // Handle file upload if there's an image
         $image = $request->file('image'); 
         $imageName = time().'.'.$image->extension();
         $image->move(public_path('images'), $imageName);
-        // Create the new session record
         $sesion=Sesion::create([
             'trainer_id' => auth()->id(),
             'name' => $request->name,
@@ -82,7 +66,7 @@ class SesionController extends Controller
             'spots' => $request->spots,
             'is_premium' => $request->has('is_premium') ? 1 : 0 ,
             'available' => $request->available ?? false,
-            'image' =>   $imageName ?? null, // storing image path if uploaded
+            'image' =>   $imageName ?? null, 
         ]);
        
    
@@ -91,30 +75,29 @@ class SesionController extends Controller
 
     public function joinSession($sessionId)
     {
-        // Check if the user is authenticated
+      
         if (!Auth::check()) {
             return redirect()->route('login')->with('error', 'Please log in to join a session.');
         }
     
         $session = Sesion::findOrFail($sessionId);
     
-        // Check if spots are available
+       
         if ($session->spots <= 0) {
             return back()->with('error', 'Ce cours est plein.');
         }
     
-        // Check if the user is already enrolled in the session
+     
         if (DB::table('sesion_users')->where('sesion_id', $sessionId)->where('user_id', Auth::id())->exists()) {
             return back()->with('error', 'Vous êtes déjà inscrit à ce cours.');
         }
     
-        // Attach the user to the session
+    
         $session->users()->attach(Auth::id());
     
-        // Decrement the available spots
+     
         $session->decrement('spots');
-       
-        // Redirect with success message
+      
         return back()->with('success', 'Vous êtes inscrit avec succès.');
     }
 
@@ -152,12 +135,11 @@ class SesionController extends Controller
         $user = Auth::user();
         $session = Sesion::findOrFail($sessionId);
     
-        // Debug statements to check values
+       
         $paid = $user->sessions()->where('sesion_id', $session->id)->wherePivot('pay', true)->exists();
-        // dd($user, $session, $paid); // This will output the values and stop execution
+        // dd($user, $session, $paid); 
     
         if ($user && $session) {
-            // Attach only if the user is not already linked with 'pay' as true
             if (!$session->users()->where('user_id', $user->id)->wherePivot('pay', true)->exists()) {
                 $session->users()->attach($user->id, ['pay' => true]);
             }

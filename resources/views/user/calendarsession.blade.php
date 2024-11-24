@@ -304,10 +304,7 @@
  </head>
  <body class="bg-[#1f2937]">
     @include("layouts.navbar")
-    {{-- <button id="show" class="hidden bg-rose-500 text-white rounded-md px-4 py-2 hover:bg-rose-700 transition"
-        onclick="openModal('showcourse')">
-        Create course
-    </button> --}}
+  
 
     <!-- Modal for course details -->
 @foreach ($sessions as $session)
@@ -583,20 +580,7 @@
                             center: 'title',
                             end: 'dayGridMonth,timeGridWeek,timeGridDay',
                         },
-                    //     events: [
-                    //     {
-                    //         title: 'Yoga Class',
-                    //         start: '2024-11-26',
-                    //         color: '#f9ac54', // Primary accent
-                    //         textColor: '#111827', // Dark text
-                    //     },
-                    // {
-                    //         title: 'Gym Session',
-                    //         start: '2024-11-27',
-                    //         color: '#1f2937', // Darker event color
-                    //         textColor: '#f9ac54', // Accent text
-                    //      }
-                    // ]
+                   
                         views: {
                             listDay: { // Customize the name for listDay
                                 buttonText: 'Day Events',
@@ -638,7 +622,7 @@
                         events: events,
 
 
-                         eventClick: (info) => {
+                    eventClick: (info) => {
 
 
                         // let a = info.event._def.extendedProps
@@ -670,9 +654,7 @@
 
                                 button.click()
                     
-                       
-                       
- },
+                     },
 
 
                     

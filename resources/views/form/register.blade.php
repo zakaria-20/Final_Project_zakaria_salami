@@ -152,7 +152,7 @@
         const photoInput = document.getElementById('photo');
     
         nextButton.addEventListener('click', () => {
-            // Validate Step 1
+          
             const name = document.getElementById('name');
             const email = document.getElementById('email');
             const password = document.getElementById('password');
@@ -161,10 +161,8 @@
             
             let isValid = true;
     
-            // Clear previous error messages
             document.querySelectorAll('.text-red-500').forEach(error => error.classList.add('hidden'));
     
-            // Check each field
             if (!name.value.trim()) {
                 document.getElementById('error-name').classList.remove('hidden');
                 isValid = false;
@@ -185,7 +183,7 @@
                 isValid = false;
             }
     
-            // Validate avatar (image input)
+           
             if (!photoInput.files.length) {
                 avatarError.textContent = 'Avatar image is required.';
                 avatarError.classList.remove('hidden');
@@ -200,7 +198,6 @@
                 }
             }
     
-            // Move to Step 2 only if valid
             if (isValid) {
                 step1.classList.add('hidden');
                 step2.classList.remove('hidden');

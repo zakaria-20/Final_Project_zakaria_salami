@@ -7,7 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gray-900 text-white font-sans">
-    <!-- Navigation -->
+
     <nav class="max-w-7xl mx-auto py-6 px-4 flex items-center justify-between">
         <div class="flex items-center">
             <a href="#" class="text-xl font-bold text-[#f9ac54]">
@@ -24,10 +24,10 @@
     </div>
     </nav>
 
-    <!-- Header Section -->
+
     <header class="relative bg-gray-900 h-full pt-24 pb-32">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-10">
-            <!-- Left Side Content -->
+        
             <div class="text-center md:text-left">
                 <h4 class="text-[#f9ac54] font-semibold text-lg mb-4">BEST FITNESS IN THE TOWN</h4>
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
@@ -44,15 +44,15 @@
             </div>
 
         
-             <!-- tari9a tania -->
+       
             <div class="relative w-[400px] h-[400px] mx-auto mt-10 md:mt-0">
-            <!-- Outer circle -->
+       
             <div class="absolute inset-0 rounded-full" style="background: conic-gradient(from 180deg at 30% 30%, #f9ac54 0deg, white 360deg);"></div>
             
-            <!-- Inner circle for gradient effect -->
+           
             <div class="absolute inset-[30px] rounded-full" style="background: conic-gradient(from 180deg at 50% 50%, rgba(249, 172, 84, 0.3) 0deg, white 360deg);"></div>
     
-            <!-- Image container -->
+           
             <div class="absolute inset-0 flex items-center justify-center">
                 <img src="{{ asset('images/header.png') }}" alt="Fitness model" class="max-w-[100%] h-auto object-contain rounded-full shadow-lg">
             </div>
@@ -60,10 +60,10 @@
 
         </div>
     </header>
-    <!-- About Us Section -->
+   
     <section class="bg-white py-16">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 px-6">
-        <!-- About Content -->
+      
         <div>
             <h2 class="text-3xl md:text-5xl font-bold mb-6 text-[#111827]">
                 Transform Your Fitness Journey
@@ -78,13 +78,13 @@
                 <li>State-of-the-art equipment</li>
             </ul>
         </div>
-        <!-- About Image -->
+     
         <div>
             <img src="https://images.pexels.com/photos/5842229/pexels-photo-5842229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="About Us" class="rounded-lg shadow-lg h-[70vh] w-[80vw]">
         </div>
     </div>
     </section>
-    <!-- Our Programs Section -->
+   
     <section class="bg-gray-800 py-16">
     <div class="max-w-7xl mx-auto px-6">
         <h2 class="text-4xl font-bold text-white text-center mb-10">Our Programs</h2>
@@ -125,7 +125,7 @@
         </div>
     </div>
     </section>
-<!-- Testimonials Section -->
+
 <section class="bg-gray-900 py-16">
     <div class="max-w-7xl mx-auto px-6">
         <h2 class="text-4xl font-bold text-white text-center mb-10">What Our Members Say</h2>
@@ -173,17 +173,7 @@
     </div>
 </section>
 <!-- Call to Action Section -->
-{{-- <section class="bg-gradient-to-r from-[#f9ac54] to-[#f4b66b] py-16">
-    <div class="max-w-7xl mx-auto text-center">
-        <h2 class="text-3xl md:text-5xl font-bold text-black mb-6">Ready to Transform Your Life?</h2>
-        <p class="text-black text-lg mb-8">
-            Sign up today and become part of the Fitness Pro community. Take the first step towards your fitness goals!
-        </p>
-        <a href="/register" class="px-8 py-3 bg-black text-[#f9ac54] rounded-md hover:bg-gray-800 transition">
-            Get Started Now
-        </a>
-    </div>
-</section> --}}
+
 <section 
     class="relative  py-16 bg-cover bg-center"
     style="background-image: url('https://images.pexels.com/photos/791763/pexels-photo-791763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"
@@ -202,7 +192,7 @@
     </div>
 </section>
 
-<!-- Contact Us Section -->
+
 <section class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-16">
     <div class="max-w-7xl mx-auto px-6">
         <h2 class="text-4xl font-bold text-white text-center mb-12">Get in Touch</h2>
@@ -269,7 +259,7 @@
     </div>
 </section>
 
-<!-- Footer Section -->
+
 <footer class="bg-gray-800 py-10">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         <!-- About Us -->
@@ -308,7 +298,7 @@
     </div>
 </footer>
 
-    <!-- Responsive Mobile Menu -->
+ 
     <div class="md:hidden fixed top-0 left-0 w-full bg-black px-4 py-6 shadow-lg">
         <div class="flex items-center justify-between">
             <a href="#" class="text-[#f9ac54] text-xl font-bold">Logo</a>
@@ -325,7 +315,7 @@
         </ul>
     </div>
 
-    <!-- Tailwind Script for Mobile Menu -->
+  
     <script>
         const menuToggle = document.getElementById('mobile-menu-toggle');
         const menu = document.getElementById('mobile-menu');

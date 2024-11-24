@@ -20,12 +20,12 @@
 <body>
   @include("layouts.navbar")
    <div class=" flex flex-col bg-gradient-to-b from-[#1f2937] to-[#111827] text-white font-['Lexend']">
-      <!-- Header Section -->
+ 
  
     
-      <!-- Content Section -->
+
       <main class="flex-1 container mx-auto px-6 py-8">
-        <!-- Profile Card -->
+       
         <div class="flex p-4 gap-6 items-center justify-between">
           <div class="flex items-center gap-4">
             <div class="aspect-square bg-cover bg-center rounded-full h-32 w-32 overflow-hidden">
@@ -47,7 +47,7 @@
           
         </div>
     
-        <!-- Personal Info Section -->
+     
         <div class="flex gap-x-28">
         <section class="mt-11">
           <h2 class="text-xl font-bold mb-4 border-b border-gray-600 pb-2">Personal Info</h2>
@@ -102,7 +102,7 @@
         <section class="mt-10">
           <h2 class="text-2xl font-bold mb-6 text-white border-b border-gray-600 pb-2">Calorie Burn Goal</h2>
           <div class="w-[40vw] flex  items-center bg-[#1f2937] pt-2   rounded-lg shadow-lg ">
-              <!-- Circular Progress -->
+           
               <div class="relative w-48 h-48 mx-auto mb-6">
                   <div class="absolute inset-0 rounded-full border-8 border-gray-600"></div>
                   <div class="absolute inset-0 rounded-full border-8 border-[conic-gradient(var(--progress) 0%, #4b5563 0%)]" style="--progress: {{ $progressPercentage }}%;"></div>
@@ -111,7 +111,7 @@
                   </div>
               </div>
 
-              <!-- Calorie Info -->
+     
               <div class="text-center mt-4">
                   <p class="text-lg text-gray-300">
                       Total Goal: <span class="font-bold text-[#f9ac54]">{{ $goalCalories }}</span> calories
@@ -126,7 +126,7 @@
           </div>
         </section>
         </div>
-        <!-- Completed Exercises Section -->
+      
         <section class="mt-8">
           <h2 class="text-xl font-bold mb-4 border-b border-gray-600 pb-2">Completed Exercises</h2>
           <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -144,7 +144,7 @@
           </div>
         </section>
     
-        <!-- Favorite Exercises Section -->
+       
         <section class="mt-8">
           <h2 class="text-xl font-bold mb-4 border-b border-gray-600 pb-2">Favorite Exercises</h2>
           <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">

@@ -5,7 +5,7 @@
             @include("layouts.sidebar")
         </div>
 
-        <!-- Main Content -->
+       
         <div class="layout-container flex  grow flex-col bg-[#1f2937] text-white pl-28 pb-3">
             <div class="px-40 flex flex-1 justify-center py-5">
                 <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
@@ -33,7 +33,7 @@
                         </div>
                     </div>
 
-                    <!-- Analytics Section -->
+               
                     <div class="flex flex-wrap gap-4 px-4 py-6">
                         {{-- <div class="flex min-w-72 flex-1 flex-col gap-2 rounded-xl bg-[#111827] border border-[#f9ac54] p-6">
                             <p class="text-[#f9ac54] text-base font-medium leading-normal">Revenue Analytics</p>
@@ -62,10 +62,7 @@
                         <div class="pt-18 w-[30vw]">
                             <canvas id="genderChart"></canvas>
                         </div>
-                        {{-- <div class="flex min-w-72 flex-1 flex-col gap-2 rounded-xl bg-[#111827] border border-[#f9ac54] p-6">
-                            <p class="text-white tracking-light text-[32px] font-bold leading-tight truncate">$188</p>
-                            <p class="text-[#C12929] text-base font-medium leading-normal">-</p>
-                        </div> --}}
+                       
                         <div class="flex min-w-72 flex-1 flex-col gap-2 rounded-xl bg-gray-800  shadow-md w-80 p-4">
                             <!-- Month and Year Header -->
                             <div class="flex justify-between items-center w-full mb-4 text-white">
@@ -216,33 +213,32 @@
                 const year = date.getFullYear();
                 const month = date.getMonth();
     
-                // Set current month and year
+              
                 currentMonthEl.textContent = date.toLocaleDateString('en-US', {
                     month: 'long',
                     year: 'numeric',
                 });
     
-                // Clear existing days
+           
                 calendarDays.innerHTML = '';
     
-                // Get first and last day of the current month
                 const firstDay = new Date(year, month, 1).getDay();
                 const lastDate = new Date(year, month + 1, 0).getDate();
     
-                // Add empty slots for days before the first day
+         
                 for (let i = 0; i < firstDay; i++) {
                     const emptySlot = document.createElement('div');
                     calendarDays.appendChild(emptySlot);
                 }
     
-                // Add days of the month
+          
                 for (let day = 1; day <= lastDate; day++) {
                     const dayElement = document.createElement('div');
                     dayElement.textContent = day;
                     dayElement.className =
                         'p-2 rounded-md hover:bg-blue-500 hover:text-white cursor-pointer';
                     
-                    // Highlight today's date
+                   
                     const today = new Date();
                     if (
                         day === today.getDate() &&
@@ -256,7 +252,7 @@
                 }
             }
     
-            // Event Listeners for Navigation
+        
             prevMonthBtn.addEventListener('click', function () {
                 date.setMonth(date.getMonth() - 1);
                 renderCalendar();
@@ -267,29 +263,29 @@
                 renderCalendar();
             });
     
-            // Initial Render
+     
             renderCalendar();
         });
         const ctx = document.getElementById('genderChart').getContext('2d');
 
-const genderChart = new Chart(ctx, {
-    type: 'pie', // Pie chart for ratios
-    data: {
-        labels: ['Hommes', 'Femmes'], // Chart labels
-        datasets: [{
-            data: [{{ $hommes }}, {{ $femmes }}], // Data from controller
-            backgroundColor: [
+        const genderChart = new Chart(ctx, {
+             type: 'pie', // Pie chart for ratios
+            data: {
+                labels: ['Hommes', 'Femmes'], // Chart labels
+                datasets: [{
+                data: [{{ $hommes }}, {{ $femmes }}], // Data from controller
+                backgroundColor: [
                 'rgba(54, 162, 235, 0.7)', // Blue for hommes
                 'rgba(255, 99, 132, 0.7)'  // Pink for femmes
-            ],
-            borderColor: [
+                ],
+                borderColor: [
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 99, 132, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
         responsive: true,
         plugins: {
             legend: {
@@ -303,92 +299,4 @@ const genderChart = new Chart(ctx, {
     </script>
     
 </x-app-layout>
-
-{{-- 
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
-    />
-
-    <title>Galileo Design</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-[#FFFFFF] group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
-      <div class="layout-container flex h-full grow flex-col">
-     
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap gap-4 p-4">
-              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#E9DFCE]">
-                <p class="text-[#1C160C] text-base font-medium leading-normal">Revenue</p>
-                <p class="text-[#1C160C] tracking-light text-2xl font-bold leading-tight">$4,53K</p>
-                <p class="text-[#019863] text-base font-medium leading-normal">+2.1%</p>
-              </div>
-              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#E9DFCE]">
-                <p class="text-[#1C160C] text-base font-medium leading-normal">Members</p>
-                <p class="text-[#1C160C] tracking-light text-2xl font-bold leading-tight">+89</p>
-                <p class="text-[#C12929] text-base font-medium leading-normal">-1.8%</p>
-              </div>
-              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#E9DFCE]">
-                <p class="text-[#1C160C] text-base font-medium leading-normal">Visited</p>
-                <p class="text-[#1C160C] tracking-light text-2xl font-bold leading-tight">56</p>
-                <p class="text-[#C12929] text-base font-medium leading-normal">-1.3%</p>
-              </div>
-              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#E9DFCE]">
-                <p class="text-[#1C160C] text-base font-medium leading-normal">Trainer</p>
-                <p class="text-[#1C160C] tracking-light text-2xl font-bold leading-tight">12</p>
-                <p class="text-[#019863] text-base font-medium leading-normal">+3.6%</p>
-              </div>
-            </div>
-            <div class="flex flex-wrap gap-4 px-4 py-6">
-              <div class="flex min-w-72 flex-1 flex-col gap-2 rounded-xl border border-[#E9DFCE] p-6">
-                <p class="text-[#1C160C] text-base font-medium leading-normal">Revenue Analytics</p>
-                <p class="text-[#1C160C] tracking-light text-[32px] font-bold leading-tight truncate">$564</p>
-                <div class="flex gap-1">
-                  <p class="text-[#A18249] text-base font-normal leading-normal">April 2024</p>
-                  <p class="text-[#019863] text-base font-medium leading-normal">+</p>
-                </div>
-                <div class="grid min-h-[180px] grid-flow-col gap-6 grid-rows-[1fr_auto] items-end justify-items-center px-3">
-                  <div class="border-[#A18249] bg-[#F4EFE6] border-t-2 w-full" style="height: 50%;"></div>
-                  <p class="text-[#A18249] text-[13px] font-bold leading-normal tracking-[0.015em]">Jan</p>
-                  <div class="border-[#A18249] bg-[#F4EFE6] border-t-2 w-full" style="height: 60%;"></div>
-                  <p class="text-[#A18249] text-[13px] font-bold leading-normal tracking-[0.015em]">Feb</p>
-                  <div class="border-[#A18249] bg-[#F4EFE6] border-t-2 w-full" style="height: 50%;"></div>
-                  <p class="text-[#A18249] text-[13px] font-bold leading-normal tracking-[0.015em]">Mar</p>
-                  <div class="border-[#A18249] bg-[#F4EFE6] border-t-2 w-full" style="height: 20%;"></div>
-                  <p class="text-[#A18249] text-[13px] font-bold leading-normal tracking-[0.015em]">Apr</p>
-                  <div class="border-[#A18249] bg-[#F4EFE6] border-t-2 w-full" style="height: 40%;"></div>
-                  <p class="text-[#A18249] text-[13px] font-bold leading-normal tracking-[0.015em]">May</p>
-                  <div class="border-[#A18249] bg-[#F4EFE6] border-t-2 w-full" style="height: 60%;"></div>
-                  <p class="text-[#A18249] text-[13px] font-bold leading-normal tracking-[0.015em]">Jun</p>
-                  <div class="border-[#A18249] bg-[#F4EFE6] border-t-2 w-full" style="height: 80%;"></div>
-                  <p class="text-[#A18249] text-[13px] font-bold leading-normal tracking-[0.015em]">Jul</p>
-                </div>
-              </div>
-              <div class="flex min-w-72 flex-1 flex-col gap-2 rounded-xl border border-[#E9DFCE] p-6">
-                <p class="text-[#1C160C] tracking-light text-[32px] font-bold leading-tight truncate">$188</p>
-                <p class="text-[#C12929] text-base font-medium leading-normal">-</p>
-              </div>
-            </div>
-           
-           
-           
-           
-           
-        
-          </div>
-        </div>
-    
-      </div>
-    </div>
-  </body>
-</html> --}}
 
