@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Header toolbar styling */
+.fc-toolbar {
+    background-color: #111827; /* Dark background for header */
+    color: #f9ac54; /* Highlighted text for header buttons */
+    border-bottom: 2px solid #f9ac54; /* Add a subtle accent */
+  }
+  
+  /* Day cells hover effect */
+  /* wwwwwwwwwww */
+  .fc-day {
+    background-color: #111827;
+    color: #f9ac54; 
+  }
+  
+  /* Weekend styling */
+  .fc-day-sat, .fc-day-sun {
+    /* background-color: #1f2937;  */
+    /* color: #f9ac54;  */
+  }
+  
+  /* Event appearance */
+  .fc-event {
+    background-color: #f9ac54; /* Primary accent for event background */
+    color: #111827; /* Dark text for contrast */
+    border: 1px solid #1f2937; /* Subtle border for events */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 14px; /* Consistent font size */
+    padding: 5px; /* Add spacing within events */
+  }
+  
+  /* Change the current day highlight */
+  .fc-day-today {
+    background-color: #1f2937; 
+    color: #f9ac54; 
+  }
+  
+  /* Styling for past days */
+  .fc-past {
+    background-color: #111827; /* Dark background for past days */
+    color: #6b7280; /* Muted gray for past day text */
+  }
+  
+  /* Focus on selected event */
+  .fc-event:hover {
+    background-color: #f9ac54; 
+    color: #f9ac54; 
+  }
+  
