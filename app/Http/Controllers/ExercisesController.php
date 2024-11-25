@@ -38,7 +38,7 @@ class ExercisesController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'calories_burned'=>"required|integer",
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', 
+            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', 
         ]);
         
         $session = Sesion::findOrFail($sessionId);

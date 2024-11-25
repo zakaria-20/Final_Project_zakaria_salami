@@ -179,6 +179,7 @@
                             center: 'title',
                             end: 'dayGridMonth,timeGridWeek,timeGridDay',
                         },
+                        initialView: window.innerWidth < 768 ? "timeGridDay" : "timeGridWeek",
 
                         views: {
                             listDay: { // Customize the name for listDay
@@ -219,7 +220,13 @@
                         // events  hya  property dyal full calendar
                         //  kat9bel array dyal objects  khass  i kono jayin 3la chkl  object fih  start  o end  7it hya li kayfahloha
                         events: reservations,
-
+                        windowResize: function(view) {
+                    if (window.innerWidth < 768) {
+                        calendar.changeView('timeGridDay');
+                    } else {
+                        calendar.changeView('timeGridWeek');
+                    }
+                },
 
                          eventClick: (info) => {
                              let eventId = info.event._def.publicId

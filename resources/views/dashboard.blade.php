@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="flex">
         <!-- Sidebar -->
-        <div class="min-h-screen bg-[#111827] text-white shadow-lg">
+        <div class="min-h-screen bg-[#111827] text-white shadow-lg sm:w-full md:w-64">
             @include("layouts.sidebar")
         </div>
 
@@ -10,7 +10,7 @@
             <div class="px-40 flex flex-1 justify-center py-5">
                 <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
                     <!-- Metrics Overview -->
-                    <div class="flex flex-wrap gap-4 p-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
                         <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-[#111827] border border-[#f9ac54]">
                             <p class="text-[#f9ac54] text-base font-medium leading-normal">Members</p>
                             <p class="text-white tracking-light text-2xl font-bold leading-tight">+{{ $totalMember }}</p>
@@ -34,7 +34,7 @@
                     </div>
 
                
-                    <div class="flex flex-wrap gap-4 px-4 py-6">
+                    <div class="flex flex-col lg:flex-row gap-6 px-4 py-6">
                         {{-- <div class="flex min-w-72 flex-1 flex-col gap-2 rounded-xl bg-[#111827] border border-[#f9ac54] p-6">
                             <p class="text-[#f9ac54] text-base font-medium leading-normal">Revenue Analytics</p>
                             <p class="text-white tracking-light text-[32px] font-bold leading-tight truncate">$564</p>
@@ -59,7 +59,7 @@
                                 <p class="text-[#f9ac54] text-[13px] font-bold leading-normal tracking-[0.015em]">Jul</p>
                             </div>
                         </div> --}}
-                        <div class="pt-18 w-[30vw]">
+                        <div class="pt-18 w-[31vw]">
                             <canvas id="genderChart"></canvas>
                         </div>
                        
@@ -119,7 +119,7 @@
                                     </div>
                     
                                     <!-- Users Table -->
-                                    <div class="overflow-x-auto">
+                                    <div class="overflow-x-auto sm:w-full lg:w-[68vw]">
                                         <table class="min-w-full divide-y divide-gray-700" id="usersTable">
                                             <thead class="bg-gray-800">
                                                 <tr>
