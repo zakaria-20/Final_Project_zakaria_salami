@@ -44,6 +44,7 @@
                     </p>
                     
         @role(["trainer"])
+        @if (Auth::user()->id == $session->trainer_id)
         <div x-data="{ openModal: false }" class="mt-12">
             <div class="pl-72">
                 <button @click="openModal = true" class="py-3 px-6 bg-[#f9ac54] text-white rounded-lg shadow-md hover:bg-[#e88d3b]">
@@ -84,6 +85,47 @@
                 </div>
             </div>
         </div>
+        @endif
+        {{-- <div x-data="{ openModal: false }" class="mt-12">
+            <div class="pl-72">
+                <button @click="openModal = true" class="py-3 px-6 bg-[#f9ac54] text-white rounded-lg shadow-md hover:bg-[#e88d3b]">
+                    Create New Exercise
+                </button>
+            </div>
+            <div 
+                x-show="openModal" 
+                class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+                @click.away="openModal = false" 
+                @keydown.escape.window="openModal = false"
+            >
+                <div class="bg-gray-800 text-gray-200 p-8 rounded-lg shadow-md w-full max-w-lg" x-transition>
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-2xl font-semibold text-white">Create New Exercise</h2>
+                        <button @click="openModal = false" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                    </div>
+                    <form action="{{ route('exercises.store', ['session' => $session->id]) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-medium">Exercise Name</label>
+                            <input type="text" id="name" name="name" required class="w-full mt-1 p-3 bg-gray-700 text-gray-200 rounded-lg border-none focus:ring focus:ring-[#f9ac54]">
+                        </div>
+                        <div class="mb-4">
+                            <label for="image" class="block text-sm font-medium">Exercise Image</label>
+                            <input type="file" id="image" name="image" accept="image/*" required class="w-full mt-1 p-3 bg-gray-700 text-gray-200 rounded-lg border-none focus:ring focus:ring-[#f9ac54]">
+                        </div>
+                        <div class="mb-4">
+                            <label for="calories" class="block text-sm font-medium">Calories Burned</label>
+                            <input type="number" id="calories" name="calories_burned" required class="w-full mt-1 p-3 bg-gray-700 text-gray-200 rounded-lg border-none focus:ring focus:ring-[#f9ac54]">
+                        </div>
+                        <div class="mt-6">
+                            <button type="submit" class="w-full py-3 bg-[#f9ac54] text-white rounded-lg hover:bg-[#e88d3b]">
+                                Create Exercise
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> --}}
         @endRole
                 </div>
             </div>

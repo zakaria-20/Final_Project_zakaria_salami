@@ -131,7 +131,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="bg-gray-900 divide-y divide-gray-700 text-white" id="usersTbody">
-                                                @foreach ($users as $user)
+                                                @foreach ($totalMemberr as $totalMember)
                                                     <tr class="hover:bg-gray-800 transition duration-200">
                                                         <!-- User Information -->
                                                         <td class="px-6 py-4 whitespace-nowrap">
@@ -139,24 +139,24 @@
                                                                 <!-- User Image -->
                                                                 <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-700">
                                                                     <img 
-                                                                        src="{{ asset("/images/" . $user->image) }}" 
-                                                                        alt="{{ $user->name }}" 
+                                                                        src="{{ asset("/images/" . $totalMember->image) }}" 
+                                                                        alt="{{ $totalMember->name }}" 
                                                                         class="object-cover w-full h-full"
                                                                     >
                                                                 </div>
                                                                 <!-- User Details -->
                                                                 <div>
-                                                                    <h1 class="font-bold text-lg text-white">{{ $user->name }}</h1>
-                                                                    <p class="text-sm text-gray-400">{{ $user->email }}</p>
+                                                                    <h1 class="font-bold text-lg text-white">{{ $totalMember->name }}</h1>
+                                                                    <p class="text-sm text-gray-400">{{ $totalMember->email }}</p>
                                                                 </div>
                                                             </div>
                                                         </td>
                                             
                                                         <!-- Expiration Date -->
                                                         <td class="px-6 py-4 whitespace-nowrap">
-                                                            @if ($user->expires_at)
+                                                            @if ($totalMember->expires_at)
                                                                 <span class="text-sm font-medium text-green-400">
-                                                                    {{ $user->expires_at->format('d-m-Y') }}
+                                                                    {{ $totalMember->expires_at->format('d-m-Y') }}
                                                                 </span>
                                                             @else
                                                                 <span class="text-sm font-medium text-gray-500">N/A</span>
@@ -166,13 +166,13 @@
                                                         <!-- User Age -->
                                                         <td class="px-6 py-4 whitespace-nowrap ">
                                                             <div class="text-sm font-medium text-gray-400">
-                                                                {{ $user->age ?? 'N/A' }}
+                                                                {{ $totalMember->age ?? 'N/A' }}
                                                             </div>
                                                         </td>
                                             
                                                         <!-- User Roles -->
                                                         <td class="px-6 py-4 whitespace-nowrap ">
-                                                            @foreach ($user->roles as $role)
+                                                            @foreach ($totalMember->roles as $role)
                                                                 <span class="px-3 py-1 text-xs font-semibold rounded-full
                                                                     {{ $role->name === 'Trainer' ? 'bg-purple-500 text-white' : 
                                                                        ($role->name === 'Member' ? 'bg-blue-500 text-white' : 
@@ -197,6 +197,7 @@
                    
                     
                 </div>
+
             </div>
         </div>
     </div>
@@ -295,6 +296,7 @@
         }
     }
 });
+
       
     </script>
     

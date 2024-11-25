@@ -21,20 +21,20 @@
             <div class="relative bg-[#1f2937] rounded-lg max-w-lg w-full shadow-lg">
                 <!-- Modal Header -->
                 <div class="p-6 bg-[#111827] rounded-t-lg">
-                    <h3 class="text-2xl font-bold text-[#fbae55]">Delete User</h3>
+                    <h3 class="text-2xl font-bold text-[#fbae55]">Delete Reservation</h3>
                 </div>
     
                 <!-- Modal Body -->
                 <div class="p-6">
                     <p class="text-sm text-gray-300">
-                        Are you sure you want to delete this user? This action cannot be undone.
+                        Are you sure you want to delete this reservation? This action cannot be undone.
                     </p>
                 </div>
     
                 <!-- Modal Footer -->
                 <div class="bg-[#111827] px-4 py-3 flex justify-end gap-4 rounded-b-lg">
                     <!-- Delete Button -->
-                    <form action="" method="POST">
+                    <form id="form" method="POST">
                         @csrf
                         @method('DELETE')
                         <button 
@@ -222,14 +222,16 @@
 
 
                          eventClick: (info) => {
-                            // let eventId = info.event._def.publicId
+                             let eventId = info.event._def.publicId
 
                             //     let buttonId = `session${eventId}`;
 
                                 let button = document.getElementById("deleteModal");
+                                form.action = `/delete/reservations/${eventId}`
 
-                                button.click()
-                    },
+                                deleteUser()
+
+                        },
 
 
                     

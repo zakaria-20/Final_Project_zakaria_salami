@@ -16,12 +16,7 @@ class ReservationController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-       
-       
-     
-    }
+  
 
     /**
      * Show the form for creating a new resource.
@@ -118,11 +113,11 @@ class ReservationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    // public function destroy(Calendar $calendar)
-    // {
-    //     //
+    public function destroy(Reservation $reservation)
+    {
+        //
 
-    //     $calendar->delete();
-    //     return back();
-    // }
+        $reservation->delete();
+        return back();
+    }
 }

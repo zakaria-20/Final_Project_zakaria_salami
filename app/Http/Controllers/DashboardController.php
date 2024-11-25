@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Reservation;
 use App\Models\Sesion;
 use App\Models\TrainerRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -15,7 +17,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        
+       
+
+
          $users=User::all()->where('id' ,"!=",1);
          $trainerCount = User::whereHas('roles', function ($query) {
             $query->where('name', 'trainer');
@@ -23,16 +27,19 @@ class DashboardController extends Controller
         $totalMember =User::whereHas('roles', function ($query) {
             $query->where('name', 'member');
         })->count();
-        
-        $pendingTrainerRequests = TrainerRequest::where('status', 'pending')->count(); // Count pending trainer requests
+        $totalMemberr =User::whereHas('roles', function ($query) {
+            $query->where('name', 'member');
+        })->get();
+        // dd($totalMember);
+        $pendingTrainerRequests = TrainerRequest::where('status', 'pending')->count(); 
        
-        $Sessions = Sesion::count(); // Count upcoming sessions
+        $Sessions = Sesion::count(); 
         $hommes = User::where('gender', 'homme')->count();
         $femmes = User::where('gender', 'femme')->count();
        
         // $data = [12, 19, 3, 5, 2, 3]; // Example data for the chart
         // $labels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
-        return view('dashboard', compact('trainerCount', 'pendingTrainerRequests', 'totalMember', 'Sessions','users','hommes','femmes'));
+        return view('dashboard', compact('trainerCount', 'pendingTrainerRequests', 'totalMember', 'Sessions','users','hommes','femmes','totalMemberr'));
     }
     // public function index1()
     // {

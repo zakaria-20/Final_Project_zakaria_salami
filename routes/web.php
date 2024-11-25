@@ -74,5 +74,5 @@ Route::get('/calendar/createe', [ReservationController::class, 'create']);
 Route::Post("/store/reservations", [ReservationController::class,'store'])->name('store.reservation');
 Route::get("/profile/user",[UserController::class, 'pageprofile']);
 Route::get("/profile/user",[UserController::class, 'indexprofil']);
-
+Route::delete("/delete/reservations/{reservation}", [ReservationController::class, 'destroy']);
 require __DIR__.'/auth.php';
