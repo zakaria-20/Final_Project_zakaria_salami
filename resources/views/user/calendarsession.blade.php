@@ -569,57 +569,31 @@
 
                     var calendar = new FullCalendar.Calendar(myCalendar, {
 
-                        // headerToolbar: {
-                        //     left: 'timeGridWeek',
-                        //     center: 'title',
-                        //     // right: 'listMonth,listWeek,listDay'
-                        // },
-                        // initialView: 'dayGridMonth',
-                        headerToolbar: {
+                       
+                //         headerToolbar: {
+                //     left: '',
+                //     center: 'title',
+                //     right: ''
+                // },
+                headerToolbar: {
                             start: 'prev,next today',
                             center: 'title',
                             end: 'dayGridMonth,timeGridWeek,timeGridDay',
                         },
-                   
-                        views: {
-                            listDay: { // Customize the name for listDay
-                                buttonText: 'Day Events',
-
-                            },
-                            listWeek: { // Customize the name for listWeek
-                                buttonText: 'Week Events'
-                            },
-                            listMonth: { // Customize the name for listMonth
-                                buttonText: 'Month Events'
-                            },
-                            timeGridWeek: {
-                                buttonText: 'Week', // Customize the button text
-                            },
-                            timeGridDay: {
-                                buttonText: "Day",
-                            },
-                            dayGridMonth: {
-                                buttonText: "Month",
-                            },
-                          
-                        },
-
-
-                        initialView: "timeGridWeek", // initial view  =   l view li kayban  mni kan7ol l  calendar
-                        slotMinTime: "09:00:00", // min  time  appear in the calendar
-                        slotMaxTime: "19:00:00", // max  time  appear in the calendar
-                        nowIndicator: true, //  indicator  li kaybyen  l wa9t daba   fin  fl calendar
-                        selectable: true, //   kankhali l user  i9ad  i selectioner  wast l calendar
-                        selectMirror: true, //  overlay   that show  the selected area  ( details  ... )
-                        selectOverlap: false, //  nkhali ktar mn event f  nfs  l wa9t  = e.g:   5 nas i reserviw nfs lblasa  f nfs l wa9t
-                        weekends: true, // n7ayed  l weekends    ola nkhalihom 
-                        editable: true,
-                        droppable: true,
-
-
-                        // events  hya  property dyal full calendar
-                        //  kat9bel array dyal objects  khass  i kono jayin 3la chkl  object fih  start  o end  7it hya li kayfahloha
-                        events: events,
+                initialView: window.innerWidth < 768 ? "timeGridDay" : "timeGridWeek",
+                slotMinTime: "04:00:00",
+                slotMaxTime: "23:00:00",
+                nowIndicator: true,
+                selectable: true,
+                events: events,
+                // height: 'auto',
+                windowResize: function(view) {
+                    if (window.innerWidth < 768) {
+                        calendar.changeView('timeGridDay');
+                    } else {
+                        calendar.changeView('timeGridWeek');
+                    }
+                },
 
 
                     eventClick: (info) => {
