@@ -32,7 +32,7 @@ class RegisteredUserController extends Controller
     {
         // dd($request->all());
         $request->validate([
-            'image'=>"required",
+            // 'image'=>"required",
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             "role"=>['required', 'string'],
