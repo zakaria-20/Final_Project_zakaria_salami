@@ -1,6 +1,5 @@
 <x-app-layout>
     <div class="flex">
-        <!-- Sidebar -->
         <div class="min-h-screen bg-[#111827] text-white shadow-lg sm:w-full md:w-64">
             @include("layouts.sidebar")
         </div>
@@ -9,7 +8,6 @@
         <div class="layout-container flex  grow flex-col bg-[#1f2937] text-white pl-28 pb-3">
             <div class="px-40 flex flex-1 justify-center py-5">
                 <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-                    <!-- Metrics Overview -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
                         <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-[#111827] border border-[#f9ac54]">
                             <p class="text-[#f9ac54] text-base font-medium leading-normal">Members</p>
@@ -100,7 +98,6 @@
                                         <h2 class="text-2xl font-bold text-white">All Members</h2>
                                     </div>
                     
-                                    <!-- Search Section -->
                                     <div class="flex flex-col sm:flex-row gap-4 mb-6 w-[18vw]">
                                         <div class="flex-1">
                                             <div class="relative">
@@ -118,7 +115,6 @@
                                         </div>
                                     </div>
                     
-                                    <!-- Users Table -->
                                     <div class="overflow-x-auto sm:w-full lg:w-[68vw]">
                                         <table class="min-w-full divide-y divide-gray-700" id="usersTable">
                                             <thead class="bg-gray-800">
@@ -133,10 +129,8 @@
                                             <tbody class="bg-gray-900 divide-y divide-gray-700 text-white" id="usersTbody">
                                                 @foreach ($totalMemberr as $totalMember)
                                                     <tr class="hover:bg-gray-800 transition duration-200">
-                                                        <!-- User Information -->
                                                         <td class="px-6 py-4 whitespace-nowrap">
                                                             <div class="flex items-center space-x-4">
-                                                                <!-- User Image -->
                                                                 <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-700">
                                                                     <img 
                                                                         src="{{ asset("/images/" . $totalMember->image) }}" 
@@ -144,7 +138,6 @@
                                                                         class="object-cover w-full h-full"
                                                                     >
                                                                 </div>
-                                                                <!-- User Details -->
                                                                 <div>
                                                                     <h1 class="font-bold text-lg text-white">{{ $totalMember->name }}</h1>
                                                                     <p class="text-sm text-gray-400">{{ $totalMember->email }}</p>
@@ -152,7 +145,6 @@
                                                             </div>
                                                         </td>
                                             
-                                                        <!-- Expiration Date -->
                                                         <td class="px-6 py-4 whitespace-nowrap">
                                                             @if ($totalMember->expires_at)
                                                                 <span class="text-sm font-medium text-green-400">
@@ -163,14 +155,12 @@
                                                             @endif
                                                         </td>
                                             
-                                                        <!-- User Age -->
                                                         <td class="px-6 py-4 whitespace-nowrap ">
                                                             <div class="text-sm font-medium text-gray-400">
                                                                 {{ $totalMember->age ?? 'N/A' }}
                                                             </div>
                                                         </td>
                                             
-                                                        <!-- User Roles -->
                                                         <td class="px-6 py-4 whitespace-nowrap ">
                                                             @foreach ($totalMember->roles as $role)
                                                                 <span class="px-3 py-1 text-xs font-semibold rounded-full

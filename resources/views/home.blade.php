@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Website</title>
+    <title>Gym</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gray-900 text-white font-sans">
-    <!-- Mobile Navigation -->
     <div class="lg:hidden fixed top-0 left-0 w-full bg-gray-900/95 backdrop-blur-sm z-50">
         <div class="flex items-center justify-between p-4">
             <a href="#" class="text-xl font-bold text-[#f9ac54]">
@@ -33,7 +32,6 @@
         </div>
     </div>
 
-    <!-- Desktop Navigation -->
     <nav class="max-w-7xl mx-auto py-6 px-4 hidden lg:flex items-center justify-between">
         <div class="flex items-center">
             <a href="#" class="text-xl font-bold text-[#f9ac54]">
@@ -50,7 +48,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="relative bg-gray-900 min-h-screen flex items-center pt-20 lg:pt-0">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 px-4 lg:px-6">
             <div class="text-center lg:text-left">
@@ -78,7 +75,6 @@
         </div>
     </header>
 
-    <!-- About Section -->
     <section class="bg-white py-16">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-10 px-4 lg:px-6">
             <div class="order-2 lg:order-1">
@@ -103,12 +99,10 @@
         </div>
     </section>
 
-    <!-- Programs Section -->
     <section class="bg-gray-800 py-16">
         <div class="max-w-7xl mx-auto px-4 lg:px-6">
             <h2 class="text-4xl font-bold text-white text-center mb-10">Our Programs</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Program Cards -->
                 <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
                     <img src="https://images.pexels.com/photos/931321/pexels-photo-931321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                          alt="Weight Training" 
@@ -151,12 +145,10 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section class="bg-gray-900 py-16">
         <div class="max-w-7xl mx-auto px-4 lg:px-6">
             <h2 class="text-4xl font-bold text-white text-center mb-10">What Our Members Say</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial Cards -->
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
                     <p class="text-gray-400 mb-4">
                         "Joining Fitness Pro was the best decision of my life. The trainers are incredibly supportive!"
@@ -205,7 +197,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="relative py-16 bg-cover bg-center" 
              style="background-image: url('https://images.pexels.com/photos/791763/pexels-photo-791763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
         <div class="absolute inset-0 bg-black/50"></div>
@@ -222,12 +213,10 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-16">
         <div class="max-w-7xl mx-auto px-4 lg:px-6">
             <h2 class="text-4xl font-bold text-white text-center mb-12">Get in Touch</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Contact Form -->
                 <form action="#" method="POST" class="bg-gray-800 p-8 rounded-lg shadow-lg space-y-6">
                     <div>
                         <label for="name" class="block text-gray-400 mb-2">Name</label>
@@ -250,7 +239,6 @@
                     </button>
                 </form>
 
-                <!-- Contact Information -->
                 <div class="text-gray-400 space-y-8">
                     <div>
                         <h3 class="text-2xl font-semibold text-white mb-3">Our Address</h3>
@@ -289,17 +277,14 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 py-10">
         <div class="max-w-7xl mx-auto px-4 lg:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <!-- About Us -->
             <div>
                 <h3 class="text-xl font-semibold text-white mb-4">About Fitness Pro</h3>
                 <p class="text-gray-400 leading-relaxed">
                     Fitness Pro is your ultimate destination for fitness, wellness, and community. Transform your life with us today!
                 </p>
             </div>
-            <!-- Quick Links -->
             <div>
                 <h3 class="text-xl font-semibold text-white mb-4">Quick Links</h3>
                 <ul class="space-y-2">
@@ -310,7 +295,6 @@
                     <li><a href="#" class="text-gray-400 hover:text-[#f9ac54] transition">Contact</a></li>
                 </ul>
             </div>
-            <!-- Subscribe -->
             <div>
                 <h3 class="text-xl font-semibold text-white mb-4">Subscribe to Newsletter</h3>
                 <form action="#" method="POST" class="space-y-4">
@@ -336,14 +320,12 @@
             menu.classList.toggle('hidden');
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
                 menu.classList.add('hidden');
             }
         });
 
-        // Handle mobile menu item clicks
         menu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');

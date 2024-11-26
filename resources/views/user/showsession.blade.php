@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Session Details</title>
+    <title>Gym Registration</title>
 </head>
 <body class="bg-gray-900 text-gray-200">
     <div class="max-w-6xl mx-auto mt-20">

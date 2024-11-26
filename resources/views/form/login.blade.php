@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Gym Management Registration</title>
+    <title>Gym Registration</title>
 </head>
 <body>
      <div class="py-20 mt-7">

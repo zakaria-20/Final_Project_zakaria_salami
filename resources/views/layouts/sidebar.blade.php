@@ -152,7 +152,6 @@
       </a>
   
       <ul class="space-y-3 my-8 flex-1">
-        <!-- Dashboard link -->
         <li>
           <a href="/dashboard"
              class="text-sm flex items-center text-[#f9ac54] border-l-[5px] border-[#f9ac54] bg-[#111827] px-8 py-4 rounded-lg hover:bg-[#1f2937] transition-all duration-200">
@@ -166,7 +165,6 @@
           </a>
         </li>
   
-        <!-- Users link -->
         <li>
           <a href="/users"
              class="text-sm flex items-center hover:text-[#f9ac54] hover:border-l-[5px] border-[#f9ac54] hover:bg-[#111827] px-8 py-4 transition-all duration-200">
@@ -180,7 +178,6 @@
           </a>
         </li>
   
-        <!-- Trainers link -->
         <li>
           <a href="/index"
              class="text-sm flex items-center hover:text-[#f9ac54] hover:border-l-[5px] border-[#f9ac54] hover:bg-[#111827] px-8 py-4 transition-all duration-200">
@@ -194,7 +191,6 @@
           </a>
         </li>
   
-        <!-- Sessions link -->
         <li>
           <a href="/sessions"
              class="text-sm flex items-center hover:text-[#f9ac54] hover:border-l-[5px] border-[#f9ac54] hover:bg-[#111827] px-8 py-4 transition-all duration-200">
@@ -208,7 +204,6 @@
           </a>
         </li>
   
-        <!-- Settings link -->
         <li>
           <a href="javascript:void(0)"
              class="text-sm flex items-center hover:text-[#f9ac54] hover:border-l-[5px] border-[#f9ac54] hover:bg-[#111827] px-8 py-4 transition-all duration-200">

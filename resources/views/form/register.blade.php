@@ -17,7 +17,7 @@
         <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
             @csrf
     
-            <!-- Step 1: Personal Information -->
+           
             <div id="step-1" class="space-y-4">
                 <!-- Avatar Section -->
                 <div class="flex justify-center">
@@ -72,7 +72,6 @@
                 </div>
             </div>
     
-            <!-- Step 2: Physical Details -->
             <div id="step-2" class="space-y-4 hidden">
                 <div>
                     <label for="length" class="block text-sm font-medium text-gray-700">Age </label>

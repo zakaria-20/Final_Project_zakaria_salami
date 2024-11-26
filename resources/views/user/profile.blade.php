@@ -16,7 +16,7 @@
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
-  <title>Responsive Profile</title>
+  <title>Gym Registration</title>
 </head>
 <body>
   @include("layouts.navbar")
